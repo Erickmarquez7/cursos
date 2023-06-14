@@ -1,3 +1,4 @@
+```
 erickmain@erickmain:~$ neofetch
              ...-:::::-...                 erickmain@erickmain 
           .-MMMMMMMMMMMMMMM-.              ------------------- 
@@ -18,3 +19,4 @@ erickmain@erickmain:~$ neofetch
        '.-MMMM``--:::::--``MMMM-.'         GPU: AMD ATI Radeon Vega Series / Ra 
             '-MMMMMMMMMMMMM-'              Memory: 2428MiB / 5873MiB 
                ``-:::::-``
+```
