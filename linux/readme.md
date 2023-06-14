@@ -1,10 +1,12 @@
 # Linux y su terminal
 
+[Entorno](bitacoras/entorno.md)
+
 ## Nivel de usuario
 
 Si en la terminal tenemos el signo de dolar ($) significa que estamos en modo usuario normal
 
-Si tenemos un gatito (#) entonces estamos en modo super usuario, generalmente este se activa con la instrucción [_sudo -i_](bitacoras/usuario)
+Si tenemos un gatito (#) entonces estamos en modo super usuario, generalmente este se activa con la instrucción [_sudo -i_](bitacoras/usuario.md)
 
 ```
 usuario@dominio:~$ sudo -i
@@ -15,7 +17,7 @@ root@dominio:~#
 
 ### ping
 
-Una buena practica es comprobar si tenemos internet para actualizar paquetes, esto se hace con [ping](bitacoras/ping)
+Una buena practica es comprobar si tenemos internet para actualizar paquetes, esto se hace con [ping](bitacoras/ping.md)
 
 ```
 usuario@dominio:~$ ping 8.8.8.8
