@@ -1,2 +1,6 @@
-# cursos
-Cursos extra de distintas plataformas como Youtube, udemy, khan academy, etc. Para complementar mi aprendizaje
+# Cursos
+
+Cursos extra de distintas plataformas como Youtube, udemy, khan academy, etc. para complementar mi aprendizaje.
+Utilizaré este repositorio a manera de notas para escribir mis apuntes de los cursos tomados, de esta manera refuerzo lo visto en clase.
+
+1. Linux y su terminal
