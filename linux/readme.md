@@ -6,7 +6,7 @@
 
 Si en la terminal tenemos el signo de dolar ($) significa que estamos en modo usuario normal
 
-Si tenemos un gatito (#) entonces estamos en modo super usuario, generalmente este se activa con la instrucción [_sudo -i_](bitacoras/usuario.md)
+Si tenemos un gatito (#) entonces estamos en modo super usuario, generalmente este se activa con la instrucción [_**sudo -i**_](bitacoras/usuario.md)
 
 ```
 usuario@dominio:~$ sudo -i
@@ -17,7 +17,7 @@ root@dominio:~#
 
 ### ping
 
-Una buena practica es comprobar si tenemos internet para actualizar paquetes, esto se hace con [ping](bitacoras/ping.md)
+Una buena practica es comprobar si tenemos internet para actualizar paquetes, esto se hace con [_**ping**_](bitacoras/ping.md)
 
 ```
 usuario@dominio:~$ ping 8.8.8.8
@@ -33,7 +33,7 @@ Y ponemos un dirección ipv4
 
 ### actualizar
 
-Para actualizar (en el entorno de mint, derivado de debian) es con el manejador _apt-get_ y [_update_](bitacoras/update.md)
+Para actualizar (en el entorno de mint, derivado de debian) es con el manejador _apt-get_ y [_**update**_](bitacoras/update.md)
 
 ```
 usuario@dominio:~$ apt-get update
@@ -45,13 +45,13 @@ Nos dirá que permiso denegado por lo cual es necesario hacerlo con _sudo_
 usuario@dominio:~$ sudo apt-get update
 ```
 
-Para aplicar las actualizaciones con [_upgrade_](bitacoras/upgrade.md)
+Para aplicar las actualizaciones con [_**upgrade**_](bitacoras/upgrade.md)
 
 ```
 usuario@dominio:~$ sudo apt-get upgrade
 ```
 
-En el caso de distrbuiciones redHat lo hacemos con _yum_ o _dnf_
+En el caso de distrbuiciones redHat lo hacemos con _**yum**_ o _**dnf**_
 
 Estas actualizaciones las obtiene de algún servidor o pagina web 
 el cual viene en algún archivo de nuestro SO dependiendo de la distribuición,
@@ -59,7 +59,9 @@ suele ser en _etc/apt/source.list_ en el caso de debian
 
 ## Directorios y permisos
 
-Todo en linux nace desde "/" que es la carpeta raíz, para saber en qué carpeta nos encontramos escribimos [_pwd_](bitacoras/pwd.md)
+### Directorios
+
+Todo en linux nace desde "/" que es la carpeta raíz, para saber en qué carpeta nos encontramos escribimos [_**pwd**_](bitacoras/pwd.md)
 
 ```
 usuario@dominio:~$ pwd
@@ -71,9 +73,9 @@ Como usario normal estamos en _/home/usuario_ y NO podremos ir a la carpeta _/ro
 
 Como usuario _root_ estamos en la carpeta _/root_ y tenemos la posibilidad de ir a la carpeta _/home/usuario_
  
-Para cambiar de directorio _cd_
+Para cambiar de directorio _**cd**_
 
-Y saber el contenido de la carpeta _ls_, para ver detalles con la bandera [_-la_](bitacoras/ls-la.md), donde
+Y saber el contenido de la carpeta _**ls**_, para ver detalles con la bandera [_**-la**_](bitacoras/ls-la.md), donde
 
 - d--------- indica que es directorio
 - l--------- indica que es enlace o acceso directo
@@ -86,7 +88,7 @@ Además
 
 Los tres primeros (sin contar el primer caracter) indican los permisos del superusuario, los siguientes 3 los permisos que tiene un cierto grupo y los ultimos 3 los permisos de todos los usuarios
 
-Un ejemplo al momento de crear documentos con _touch_ y los usuarios
+Un ejemplo al momento de crear documentos con _**touch**_ y los usuarios
 
 ```
 erickmain@erickmain:~$ ls -la pruebaUsuario.txt 
@@ -117,3 +119,59 @@ Algunos comandos que pueden servir
 - cat \<archivo\> muestra el contenido del archivo
 
 Además con touch podemos modificar tiempos de acceso, de escritura, fecha, hora, etc.
+
+### Permisos
+
+Para cambiar los permisos lo hacemos con el comando [_**chmod**_](bitacoras/chmod.md)
+
+```
+usuario@dominio:~$ chmod 777 archivo
+```
+
+También podemos cambiar la propiedad con el comando [_**chown**_](bitacoras/chown.md)
+
+```
+usuario@dominio:~$ chown <usuario:grupo> <archivo>
+```
+
+Aquí cambió la propiedad de root a mi usuario
+
+*en este punto hubo cambio de carpetas
+
+## Comprimir archivos
+
+Para comprimir archivos lo hacemos con el comando [_**tar**_](bitacoras/tar.md), donde
+
+- -c Crea el archivo .tar
+- -v Muestra el proceso de comprensión
+- -f Le pone nombre al archivo
+- -z Comprime en gzip
+- -x Descomprime el archivo
+
+Notemos que al descomprimir se quedan guardadas la última hora de modificación y no la de descomprensión. 
+
+También tenemos la posibilidad de comprimir con _**gzip**_ pero solo archivos, con _**tar**_ pueden ser también carpetas
+
+## Script básico
+
+El archivo necesita tener extensión .sh y empezar con _!/bin/bash_, esto le indica que será interpretado por la shell de linux
+
+Aquí un [script](bitacoras/script.sh) de prueba
+
+Podemos declarar variables con var=ejemplo, y para utilizarlas tenemos que acceder a ellas con el signo de dolar ($), ya que si lo dejamos como _var_ entonces lo identifica como palabra.
+
+Además, este archivo debe ser propiedad de _root_ y tener permisos de ejecución. Para ejecutarlo escribirmos _./script.sh_
+
+De esta manera podemos automatizar tareas como respaldos _.tar_, limpieza, actualizaciones, etc.
+
+Esto se puede configurar con el demonio _cron_, el cual se ejecuta desde que se inicia la maquina y comprueba si hay alguna tarea a ejecutar, por lo cual la configuración de la fecha y hora debe ser la correcta
+
+_crontrab_ es un archivo de texto que contiene las tareas a ejecutar
+
+Podemos editar este archivo con
+
+```
+usuario@dominio:~$ crontab -e
+```
+
+Para una mejor [documentación](https://www.redeszone.net/tutoriales/servidores/cron-crontab-linux-programar-tareas/)
