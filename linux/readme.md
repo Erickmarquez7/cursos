@@ -120,6 +120,23 @@ Algunos comandos que pueden servir
 
 Además con touch podemos modificar tiempos de acceso, de escritura, fecha, hora, etc.
 
+### Carpetas en linux
+
+Todo en linux es un archivo o carpeta, en ese sentido cada una tiene un propósito y va por niveles
+
+- /bin/ Archivos binarios del usuario
+- /sbin/ Binarios del sistema
+- /boot/ Donde se aloja el kernel junto con otros archivos de arranque (uname -r)
+- /etc/ Archivos de configuración de los servicios o sistemas 
+- /home/ Directorio personal
+- /lib/ Bibliotecas necesarias para la ejecución de los binarios
+- /opt/ Aplicaciones externas que no se integran en /usr/
+- /proc/ Archivos virtuales, información de procesos, el contenido no está en el disco sino en la memoria
+- /root/ Directorio del superusuario
+- /srv/ Archivos relacionados a servidores
+- /tmp/ Temporales
+- /var/ Variables
+
 ### Permisos
 
 Para cambiar los permisos lo hacemos con el comando [_**chmod**_](bitacoras/chmod.md)
@@ -175,3 +192,40 @@ usuario@dominio:~$ crontab -e
 ```
 
 Para una mejor [documentación](https://www.redeszone.net/tutoriales/servidores/cron-crontab-linux-programar-tareas/)
+
+Este lenguaje bash y los scripts requieren de un curso completo, esta es solamente una breve introducción
+
+## Hardware
+
+Algunos comandos para obtener información del hardware
+
+```
+usuario@dominio:~$ free
+```
+Muestra la información de la memoria RAM y SWAP, donde las banderas
+
+- -m Lo muestra en megabytes
+- -h Lo hace mas legible
+
+Para mostrar información acerca de la cpu
+
+```
+usuario@dominio:~$ lscpu
+```
+o bien con 
+
+```
+usuario@dominio:~$ cat /proc/cpuinfo 
+```
+
+Mostrar información acerca de las particiones
+
+```
+usuario@dominio:~$ lslbk
+```
+
+Mostrar perifericos
+
+```
+usuario@dominio:~$ lsusb
+```
