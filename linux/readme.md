@@ -94,10 +94,10 @@ Un ejemplo al momento de crear documentos con _**touch**_ y los usuarios
 erickmain@erickmain:~$ ls -la pruebaUsuario.txt 
 -rw-rw-r-- 1 erickmain erickmain 0 jun 13 22:05 pruebaUsuario.txt
 erickmain@erickmain:~$ sudo -i
-[sudo] password for erickmain:           
+
+[sudo] password for erickmain:    
 root@erickmain:~# cd /home/erickmain/
 root@erickmain:/home/erickmain# touch pruebaSuperUsuario.txt
-
 root@erickmain:/home/erickmain# ls -la prueba*
 -rw-r--r-- 1 root      root      0 jun 13 22:06 pruebaSuperUsuario.txt
 -rw-rw-r-- 1 erickmain erickmain 0 jun 13 22:05 pruebaUsuario.txt
@@ -135,27 +135,28 @@ Todo en linux es un archivo o carpeta, en ese sentido cada una tiene un propósi
 - /root/ Directorio del superusuario
 - /srv/ Archivos relacionados a servidores
 - /tmp/ Temporales
+- /usr/ Archivos de programas y apps instaladas
 - /var/ Variables
 
 ### Permisos
 
-Para cambiar los permisos lo hacemos con el comando [_**chmod**_](bitacoras/chmod.md)
+Para cambiar los **permisos** lo hacemos con el comando [_**chmod**_](bitacoras/chmod.md)
 
 ```
 usuario@dominio:~$ chmod 777 archivo
 ```
 
-También podemos cambiar la propiedad con el comando [_**chown**_](bitacoras/chown.md)
+También podemos cambiar la **propiedad** con el comando [_**chown**_](bitacoras/chown.md)
 
 ```
 usuario@dominio:~$ chown <usuario:grupo> <archivo>
 ```
 
-Aquí cambió la propiedad de root a mi usuario
+Aquí cambió la propiedad de root a mi usuario, para ello se debe estar en modo _root_
 
 *en este punto hubo cambio de carpetas
 
-## Comprimir archivos
+### Comprimir archivos
 
 Para comprimir archivos lo hacemos con el comando [_**tar**_](bitacoras/tar.md), donde
 
@@ -169,6 +170,27 @@ Notemos que al descomprimir se quedan guardadas la última hora de modificación
 
 También tenemos la posibilidad de comprimir con _**gzip**_ pero solo archivos, con _**tar**_ pueden ser también carpetas
 
+## Procesos en Linux
+
+Para ver los procesos en la maquina escribimos [_**top**_](bitacoras/top.md)
+
+```
+usuario@dominio:~$ top
+```
+
+Para matar alguno de estos procesos lo hacemos con _**kill**_
+
+```
+usuario@dominio:~$ kill <PID>
+```
+
+Estado de los procesos que se están ejecutando con [_**ps**_](bitacoras/ps.md)
+
+Las registros de los procesos suelen guardarse en archivos _.log_
+
+```
+usuario@dominio:~$ ps -f
+```
 ## Script básico
 
 El archivo necesita tener extensión .sh y empezar con _!/bin/bash_, esto le indica que será interpretado por la shell de linux
@@ -202,6 +224,7 @@ Algunos comandos para obtener información del hardware
 ```
 usuario@dominio:~$ free
 ```
+
 Muestra la información de la memoria RAM y SWAP, donde las banderas
 
 - -m Lo muestra en megabytes
@@ -218,13 +241,13 @@ o bien con
 usuario@dominio:~$ cat /proc/cpuinfo 
 ```
 
-Mostrar información acerca de las particiones
+Para mostrar información acerca de las particiones
 
 ```
 usuario@dominio:~$ lslbk
 ```
 
-Mostrar perifericos
+Para obtener información acerca de los perifericos
 
 ```
 usuario@dominio:~$ lsusb
