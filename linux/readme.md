@@ -13,6 +13,13 @@ usuario@dominio:~$ sudo -i
 root@dominio:~#
 ```
 
+Para saber información acerca de mi usuario con [_**id**_](bitacoras/id.md)
+
+Podemos ir agregando usuarios con adduser y establecer contraseña con 
+Puede o no crear una carpeta en _/home/_ con el nombre del usuario
+En caso de que no la cree el usuario _root_ debe crearla y cambiar la propiedad
+al usuario nuevo
+
 ## Conexión de red
 
 ### ping
