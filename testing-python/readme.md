@@ -158,6 +158,24 @@ Es un conjunto de metodologías que se adapta al contexto y necesidad del proyec
 * Lo hacen multiples equipos
 
 #### Desventajas
+?
+
+## Fases del testing
+
+1. Estudio
+
+    Se analizan los requisitos del cliente, qué es lo se requiere en la app.
+    Para esto es ideal que el equipo de testers formen parte del proceso de del         
+    analisis de requisitos del software, para que vaya a la par con el proyecto y 
+    determinar el alcance de las pruebas.
+
+2. Diseño
+3. Estrategia
+4. Escritura
+5. Ejecución
+6. Evaluación
+7. Mantenimiento
+
 
 ## notas mias xd
 Disciplina en la ing del soft que permite detectar defectos
